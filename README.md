@@ -36,6 +36,27 @@ Please see `setup.sh` from complete list.
 
 The following are post-installation steps that you may opt-in to setup.
 
+### MySQL
+```bash
+sudo mysql_secure_installation
+// Use this answers
+> New Password: root
+> Re-enter Password: root
+> Remove anonymous users: y
+> Disallow remote login: y
+> Remove test database: y
+> Reload privileges: y
+# When accessing mysql via terminal, use sudo
+sudo mysql -uroot -p
+> password: root
+```
+
+### Add PHPMyAdmin
+```bash
+sudo apt-get install phpmyadmin
+> select `apache`, if prompted
+```
+
 ### Add Virtual Hosts
 ```bash
 mkdir ~/Code
@@ -48,5 +69,5 @@ sudo usermod -g www-data $USER
 If all goes well, remove the `html.bk` folder.
 
 ```bash
-sudo rm /var/www/html.bk
+sudo rm -r /var/www/html.bk
 ```
