@@ -1,4 +1,4 @@
-#!/usr/bin env bash
+#!/usr/bin/env bash
 
 # Install prerequisites
 sudo apt install software-properties-common -y
@@ -21,6 +21,5 @@ sudo rm /tmp/composer-setup.php
 
 # Install NodeJS
 curl -o- https://raw.githubusercontent.com/nvm-sh/nvm/v0.40.1/install.sh | bash
-nvm install --lts
-nvm use --lts
+nvm install 20
 
