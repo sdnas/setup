@@ -1,0 +1,52 @@
+# Environment Setup
+
+## Installation
+
+After cloning this repository, `cd` into and run:
+
+> Note: before running `setup.sh`, please review and edit the file to your liking.
+
+```bash
+chmod +x ./setup.sh
+sudo ./setup.sh
+```
+
+<br>
+
+---
+
+## The setup.sh file
+
+The file contains installation scripts for various development tools and packages.
+
+The installer will attempt to install the following:
+
+- LAMP Server
+- The ppa:ondrej/php for PHP version management
+- Composer Dependency Manager for PHP
+- nvm for NodeJS version management
+
+Please see `setup.sh` from complete list.
+
+<br>
+
+---
+
+## Post-installation
+
+The following are post-installation steps that you may opt-in to setup.
+
+### Add Virtual Hosts
+```bash
+mkdir ~/Code
+# Backup the default 'html' folder
+sudo mv /var/www/html /var/www/html.bk
+sudo ln -s ~/Code /var/www/html
+sudo usermod -g www-data $USER
+```
+
+If all goes well, remove the `html.bk` folder.
+
+```bash
+sudo rm /var/www/html.bk
+```
