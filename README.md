@@ -11,8 +11,6 @@ chmod +x ./setup.sh
 sudo ./setup.sh
 ```
 
-<br>
-
 ---
 
 ## The setup.sh file
@@ -22,13 +20,10 @@ The file contains installation scripts for various development tools and package
 The installer will attempt to install the following:
 
 - LAMP Server
-<!-- - The ppa:ondrej/php for PHP version management -->
 - Composer Dependency Manager for PHP
 - nvm for NodeJS version management
 
 Please see `setup.sh` from complete list.
-
-<br>
 
 ---
 
@@ -57,6 +52,12 @@ sudo apt-get install phpmyadmin
 > select `apache`, if prompted
 ```
 
+### Restart Services
+```bash
+sudo service apache2 restart
+sudo service mysql restart
+```
+
 ### Add Virtual Hosts
 ```bash
 mkdir ~/Code
@@ -71,4 +72,18 @@ If all goes well, remove the `html.bk` folder.
 
 ```bash
 sudo rm -r /var/www/html.bk
+```
+
+### SQLSTATE[HY000][1698]
+
+This error will you see when you login in phpmyadmin, to fix this run the following code below:
+
+```bash
+sudo mysql -uroot -p #by default p = root
+# Copy and paste this code
+DROP USER root@localhost;
+# change root_password based on your choice
+CREATE USER root@localhost IDENTIFIED BY 'root_password'; 
+GRANT ALL PRIVILEGES ON *.* TO 'root'@'localhost';
+FLUSH PRIVILEGES;
 ```
