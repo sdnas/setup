@@ -22,7 +22,7 @@ The file contains installation scripts for various development tools and package
 The installer will attempt to install the following:
 
 - LAMP Server
-- The ppa:ondrej/php for PHP version management
+<!-- - The ppa:ondrej/php for PHP version management -->
 - Composer Dependency Manager for PHP
 - nvm for NodeJS version management
 
@@ -63,7 +63,8 @@ mkdir ~/Code
 # Backup the default 'html' folder
 sudo mv /var/www/html /var/www/html.bk
 sudo ln -s ~/Code /var/www/html
-sudo usermod -g www-data $USER
+# Run this if localhost is forbidden 
+sudo usermod -g www-data $USER  
 ```
 
 If all goes well, remove the `html.bk` folder.
